@@ -36,12 +36,12 @@ class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // もし最初のsectionが0であるなら
-        if indexPath.row == 0{
+        if indexPath.section == 0{
             let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as! ShopListItemTableViewCell // dequeueReusable〜メソッドはAnyobject型を返すのでキャストしておく
             cell.name.text = "\(indexPath.row)" // 一旦cellのname labelのtextに列番号を代入
             return cell
         }
-        
+        // 通常は呼ばれない
         return UITableViewCell()
     }
     
