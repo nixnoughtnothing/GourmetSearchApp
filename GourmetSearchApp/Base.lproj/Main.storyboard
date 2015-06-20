@@ -33,10 +33,22 @@
                                                         <constraint firstAttribute="height" constant="99" id="YIv-xQ-PbP"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxf-aN-2J8">
+                                                    <rect key="frame" x="107" y="8" width="485" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="hyX-cj-Rau"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bK3-rw-HKJ" firstAttribute="top" secondItem="YB5-et-uxg" secondAttribute="top" id="1BC-U8-QGi"/>
                                                 <constraint firstItem="bK3-rw-HKJ" firstAttribute="leading" secondItem="YB5-et-uxg" secondAttribute="leading" id="1vZ-02-L3B"/>
+                                                <constraint firstAttribute="trailing" secondItem="Sxf-aN-2J8" secondAttribute="trailing" constant="8" id="Evw-Zd-OXZ"/>
+                                                <constraint firstItem="Sxf-aN-2J8" firstAttribute="leading" secondItem="bK3-rw-HKJ" secondAttribute="trailing" constant="8" id="ifQ-a7-uKl"/>
+                                                <constraint firstItem="Sxf-aN-2J8" firstAttribute="top" secondItem="YB5-et-uxg" secondAttribute="top" constant="8" id="mX2-zt-Vez"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
