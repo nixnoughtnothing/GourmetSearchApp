@@ -98,10 +98,13 @@
                                             <outlet property="name" destination="Sxf-aN-2J8" id="FKs-7J-8fR"/>
                                             <outlet property="nameHeight" destination="hyX-cj-Rau" id="Dwb-70-hEP"/>
                                             <outlet property="photo" destination="bK3-rw-HKJ" id="081-gj-hGj"/>
-                                            <outlet property="station" destination="zPo-ul-boY" id="bn5-B3-Gcw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="lT3-7F-dVs"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="NUZ-G7-gkw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
