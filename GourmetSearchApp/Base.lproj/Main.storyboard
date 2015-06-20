@@ -42,15 +42,21 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eyc-j6-Olm">
-                                                    <rect key="frame" x="161" y="25" width="300" height="50"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyc-j6-Olm">
+                                                    <rect key="frame" x="107" y="69" width="485" height="22"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="ZWE-df-kid"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bK3-rw-HKJ" firstAttribute="top" secondItem="YB5-et-uxg" secondAttribute="top" id="1BC-U8-QGi"/>
                                                 <constraint firstItem="bK3-rw-HKJ" firstAttribute="leading" secondItem="YB5-et-uxg" secondAttribute="leading" id="1vZ-02-L3B"/>
+                                                <constraint firstAttribute="trailing" secondItem="Eyc-j6-Olm" secondAttribute="trailing" constant="8" id="2tY-1w-TMh"/>
+                                                <constraint firstItem="Eyc-j6-Olm" firstAttribute="leading" secondItem="bK3-rw-HKJ" secondAttribute="trailing" constant="8" id="60N-NF-O16"/>
                                                 <constraint firstAttribute="trailing" secondItem="Sxf-aN-2J8" secondAttribute="trailing" constant="8" id="Evw-Zd-OXZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="Eyc-j6-Olm" secondAttribute="bottom" constant="8" id="P4V-wz-AJ3"/>
                                                 <constraint firstItem="Sxf-aN-2J8" firstAttribute="leading" secondItem="bK3-rw-HKJ" secondAttribute="trailing" constant="8" id="ifQ-a7-uKl"/>
                                                 <constraint firstItem="Sxf-aN-2J8" firstAttribute="top" secondItem="YB5-et-uxg" secondAttribute="top" constant="8" id="mX2-zt-Vez"/>
                                             </constraints>
