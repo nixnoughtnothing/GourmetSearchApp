@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ShopListViewController.swift
 //  GourmetSearchApp
 //
 //  Created by nixnoughtnothing on 6/20/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ShopListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
