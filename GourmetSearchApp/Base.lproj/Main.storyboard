@@ -44,8 +44,23 @@
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyc-j6-Olm">
                                                     <rect key="frame" x="107" y="69" width="485" height="22"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zu7-DN-cyf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="22"/>
+                                                            <color key="backgroundColor" red="1" green="0.33401784559999997" blue="0.2278495113" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="22" id="lmH-s6-Q6x"/>
+                                                                <constraint firstAttribute="width" constant="60" id="v49-gL-71S"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="centerY" secondItem="Zu7-DN-cyf" secondAttribute="centerY" id="H22-bk-a2t"/>
+                                                        <constraint firstItem="Zu7-DN-cyf" firstAttribute="leading" secondItem="Eyc-j6-Olm" secondAttribute="leading" id="SJV-WU-yuT"/>
                                                         <constraint firstAttribute="height" constant="22" id="ZWE-df-kid"/>
                                                     </constraints>
                                                 </view>
