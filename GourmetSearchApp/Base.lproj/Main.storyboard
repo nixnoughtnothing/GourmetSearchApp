@@ -42,6 +42,10 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eyc-j6-Olm">
+                                                    <rect key="frame" x="161" y="25" width="300" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bK3-rw-HKJ" firstAttribute="top" secondItem="YB5-et-uxg" secondAttribute="top" id="1BC-U8-QGi"/>
