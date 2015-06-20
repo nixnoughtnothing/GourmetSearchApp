@@ -89,6 +89,17 @@
                                                 <constraint firstItem="Sxf-aN-2J8" firstAttribute="top" secondItem="YB5-et-uxg" secondAttribute="top" constant="8" id="mX2-zt-Vez"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coupon" destination="Zu7-DN-cyf" id="lYA-kw-SGs"/>
+                                            <outlet property="iconContainer" destination="Eyc-j6-Olm" id="PXL-cv-qpf"/>
+                                            <outlet property="location" destination="zPo-ul-boY" id="X8b-t7-DmG"/>
+                                            <outlet property="locationWidth" destination="OT7-zE-2Mm" id="SgJ-t7-Tjx"/>
+                                            <outlet property="locationX" destination="Yju-5K-drF" id="sqS-93-mbe"/>
+                                            <outlet property="name" destination="Sxf-aN-2J8" id="FKs-7J-8fR"/>
+                                            <outlet property="nameHeight" destination="hyX-cj-Rau" id="Dwb-70-hEP"/>
+                                            <outlet property="photo" destination="bK3-rw-HKJ" id="081-gj-hGj"/>
+                                            <outlet property="station" destination="zPo-ul-boY" id="bn5-B3-Gcw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -101,6 +112,10 @@
                             <constraint firstItem="mbY-yd-Fcm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="eSd-fA-8Qv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="name" destination="Sxf-aN-2J8" id="tIO-Vc-Jj2"/>
+                        <outlet property="photo" destination="bK3-rw-HKJ" id="XbT-SS-bzl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
