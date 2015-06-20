@@ -10,6 +10,17 @@ import UIKit
 
 class ShopListItemTableViewCell: UITableViewCell {
 
+    // MARK: - IBOutlets -
+    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var iconContainer: UIView!
+    @IBOutlet weak var coupon: UILabel!
+    @IBOutlet weak var location: UILabel!
+
+    @IBOutlet weak var nameHeight: NSLayoutConstraint!
+    @IBOutlet weak var locationWidth: NSLayoutConstraint!
+    @IBOutlet weak var locationX: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
