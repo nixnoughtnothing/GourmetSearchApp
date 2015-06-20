@@ -13,6 +13,7 @@
 		5B49FC7D1B35002A002541EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B49FC7C1B35002A002541EE /* Images.xcassets */; };
 		5B49FC801B35002A002541EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B49FC7E1B35002A002541EE /* LaunchScreen.xib */; };
 		5B49FC8C1B35002A002541EE /* GourmetSearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC8B1B35002A002541EE /* GourmetSearchAppTests.swift */; };
+		5B49FC961B352E94002541EE /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */; };
 		5B4D48DE7F47AA10FE403246 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EA40967B68AC085D0E1A66 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		5B49FC851B35002A002541EE /* GourmetSearchAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GourmetSearchAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B49FC8A1B35002A002541EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B49FC8B1B35002A002541EE /* GourmetSearchAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetSearchAppTests.swift; sourceTree = "<group>"; };
+		5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +95,8 @@
 		5B49FC721B35002A002541EE /* GourmetSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				5B49FC971B352F08002541EE /* ShopList */,
 				5B49FC751B35002A002541EE /* AppDelegate.swift */,
-				5B49FC771B35002A002541EE /* ShopListViewController.swift */,
 				5B49FC791B35002A002541EE /* Main.storyboard */,
 				5B49FC7C1B35002A002541EE /* Images.xcassets */,
 				5B49FC7E1B35002A002541EE /* LaunchScreen.xib */,
@@ -126,6 +128,15 @@
 				5B49FC8A1B35002A002541EE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B49FC971B352F08002541EE /* ShopList */ = {
+			isa = PBXGroup;
+			children = (
+				5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */,
+				5B49FC771B35002A002541EE /* ShopListViewController.swift */,
+			);
+			name = ShopList;
 			sourceTree = "<group>";
 		};
 		B05EFDE59891972729F0EB8D /* Frameworks */ = {
@@ -287,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B49FC961B352E94002541EE /* ShopListItemTableViewCell.swift in Sources */,
 				5B49FC781B35002A002541EE /* ShopListViewController.swift in Sources */,
 				5B49FC761B35002A002541EE /* AppDelegate.swift in Sources */,
 			);
