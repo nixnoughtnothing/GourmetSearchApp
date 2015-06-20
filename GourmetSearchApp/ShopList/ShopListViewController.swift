@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ShopListViewController: UIViewController {
+class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     
-    
+    // MARK: - outlets -
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,7 +23,28 @@ class ShopListViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: - UITableViewDelegate -
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100 // cellのheightを返す
+    }
+    
+    // MARK: - UITableViewDataSource -
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20 // sectionの中のrowの数を返す
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // もし最初のsectionが0であるなら
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as! ShopListItemTableViewCell // dequeueReusable〜メソッドはAnyobject型を返すのでキャストしておく
+            cell.name.text = "\(indexPath.row)" // 一旦cellのname labelのtextに列番号を代入
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
 
 }
 
