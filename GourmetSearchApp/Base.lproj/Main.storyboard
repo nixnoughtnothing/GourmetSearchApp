@@ -113,8 +113,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="name" destination="Sxf-aN-2J8" id="tIO-Vc-Jj2"/>
-                        <outlet property="photo" destination="bK3-rw-HKJ" id="XbT-SS-bzl"/>
                         <outlet property="tableView" destination="mbY-yd-Fcm" id="hiE-F4-1Mo"/>
                     </connections>
                 </viewController>
