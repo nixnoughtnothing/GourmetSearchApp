@@ -26,10 +26,18 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="79G-5c-E2E" id="YB5-et-uxg">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bK3-rw-HKJ">
-                                                    <rect key="frame" x="13" y="0.0" width="120" height="99"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bK3-rw-HKJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="99" id="SjX-jF-iV5"/>
+                                                        <constraint firstAttribute="height" constant="99" id="YIv-xQ-PbP"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bK3-rw-HKJ" firstAttribute="top" secondItem="YB5-et-uxg" secondAttribute="top" id="1BC-U8-QGi"/>
+                                                <constraint firstItem="bK3-rw-HKJ" firstAttribute="leading" secondItem="YB5-et-uxg" secondAttribute="leading" id="1vZ-02-L3B"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yBU-ZI-HlA">
