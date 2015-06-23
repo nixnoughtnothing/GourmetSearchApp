@@ -15,6 +15,7 @@
 		5B49FC8C1B35002A002541EE /* GourmetSearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC8B1B35002A002541EE /* GourmetSearchAppTests.swift */; };
 		5B49FC961B352E94002541EE /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */; };
 		5B4D48DE7F47AA10FE403246 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EA40967B68AC085D0E1A66 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5B52C25F1B39BC5400C6712C /* YelpLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B52C25E1B39BC5400C6712C /* YelpLocal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		5B49FC8A1B35002A002541EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B49FC8B1B35002A002541EE /* GourmetSearchAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetSearchAppTests.swift; sourceTree = "<group>"; };
 		5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopListItemTableViewCell.swift; path = ShopList/ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
+		5B52C25E1B39BC5400C6712C /* YelpLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpLocal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		5B49FC721B35002A002541EE /* GourmetSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				5B52C25D1B39A2D000C6712C /* Common */,
 				5B49FC971B352F08002541EE /* ShopList */,
 				5B49FC751B35002A002541EE /* AppDelegate.swift */,
 				5B49FC791B35002A002541EE /* Main.storyboard */,
@@ -137,6 +140,14 @@
 				5B49FC771B35002A002541EE /* ShopListViewController.swift */,
 			);
 			name = ShopList;
+			sourceTree = "<group>";
+		};
+		5B52C25D1B39A2D000C6712C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5B52C25E1B39BC5400C6712C /* YelpLocal.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		B05EFDE59891972729F0EB8D /* Frameworks */ = {
@@ -301,6 +312,7 @@
 				5B49FC961B352E94002541EE /* ShopListItemTableViewCell.swift in Sources */,
 				5B49FC781B35002A002541EE /* ShopListViewController.swift in Sources */,
 				5B49FC761B35002A002541EE /* AppDelegate.swift in Sources */,
+				5B52C25F1B39BC5400C6712C /* YelpLocal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
