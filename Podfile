@@ -5,6 +5,7 @@ use_frameworks!
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'Alamofire-SwiftyJSON', :git => "https://github.com/SwiftyJSON/Alamofire-SwiftyJSON.git"
+pod 'SDWebImage'
 
 target 'GourmetSearchApp' do
 
