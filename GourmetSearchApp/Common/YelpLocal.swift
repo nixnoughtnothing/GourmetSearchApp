@@ -29,7 +29,7 @@ public struct Shop : Printable {
 
 
     public var description: String{
-        // 下記は読み取り専用
+        // Read-Only
         get{
             var string = "\nGid: \(gid)\n"
             string += "Name: \(name)\n"
@@ -47,3 +47,84 @@ public struct Shop : Printable {
 }
 
 // added struct "Shop" in YelpLocal.swift
+public struct QueryCondition{
+    // キーワード
+    public var query: String? = nil
+    // 店舗ID
+    public var gid: String? = nil
+    // ソート順(列挙型で定義）
+    public enum Sort: String{
+        case BestMatched = "bestMatched"
+        case Distance = "distance"
+        case HighestRated = "highestRated"
+    }
+    public var sort: Sort = .BestMatched
+    // 緯度
+    public var latitude: Double? = nil
+    // 経度
+    public var longitude: Double? = nil
+    // 距離
+    public var distance: Double? = nil
+    
+    // 検索パラメータdictionary(コンピューテッドプロパティ)
+    public var queryParams: [String: String]{
+        // Read-Only
+        get{
+            var params = [String:String]()
+            // key word
+            if let unwrapped = query{
+                params["query"] = unwrapped
+            }
+            // Shop ID
+            if let unwrapped = gid{
+                params["gid"] = unwrapped
+            }
+            // sort order
+            switch sort{
+            case    .BestMatched:
+                params["sort"] = "Score"
+            case    .Distance:
+                params["sort"] = "Geo"
+            case    .HighestRated:
+                params["sort"] = "highestRated"
+            }
+            
+            // 緯度
+            if let unwrapped = latitude{
+                params["latitude"] = "\(unwrapped)"
+            }
+            // 経度
+            if let unwrapped = longitude{
+                params["longitude"] = "\(unwrapped)"
+            }
+            // 距離
+            if let unwrapped = distance{
+                params["distance"] = "\(unwrapped)"
+            }
+            // デバイス:mobile固定
+            params["device"] = "mobile"
+            
+            // grouping:gid固定
+            params["group"] = "gid"
+            // 画像があるデータのみを検索する: true固定
+            params["image"] = "true"
+            // 業種コード:01(グルメ)固定
+//            params["category_filter"] = "01"
+            
+            return params
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
