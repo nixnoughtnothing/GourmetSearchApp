@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+import Alamofire_SwiftyJSON
 
 
 /* APIから渡ってきたJSON Dataのパースに使用するSwiftJSONの値がOptional型を返すので、
