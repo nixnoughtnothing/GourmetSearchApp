@@ -235,6 +235,7 @@ public class YahooLocalSearch{
             }else{
                 self.total = 0
             }
+            println(self.total)
         })
     }
 }
