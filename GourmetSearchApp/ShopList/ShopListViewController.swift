@@ -14,6 +14,22 @@ class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     // MARK: - outlets -
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
+    // yahooLocalSearchのインスタンスに現在表示している店舗の一覧を保持するために、APIリクエスト終了後もyahooLocalSearchのインスタンスを保存する必要がある。
+    // 下記はそのためのプロパティ
+    var yahooSearch:YahooLocalSearch = YahooLocalSearch()
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var qc = QueryCondition()
+        qc.query = "ハンバーガー"
+        yahooSearch = YahooLocalSearch(condition: qc)
+        yahooSearch.loadData(reset: true) // 初回のみresetパラメータをtrueに
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
