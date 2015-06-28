@@ -118,7 +118,126 @@ public struct QueryCondition{
 
 
 
+// MARK: - APIにアクセスするためのクラス -
+public class YahooLocalSearch{
+    // yahooサーチAPIのアプリケーションID
+    let apiId = "dj0zaiZpPUNHWm54MXNqa2FXMiZzPWNvbnN1bWVyc2VjcmV0Jng9NzE-"
+    // APIのベースURL
+    let apiURL = "http://search.olp.yahooapis.jp/OpenLocalPlatform/V1/localSearch"
+    // 1ページのレコード数
+    let perPage = 10
+    // 読み込み済みの店舗
+    public var shops = [Shop]()
+    // 全何件か
+    public var total = 0
+    
+    //検索条件
+    var condition: QueryCondition = QueryCondition(){
+        // プロパティオブサーバ: 新しい値がセットされた後に読み込み済の店舗を捨てる
+        // *didSetはプロパティの値が変更された後に呼ばれる
+        didSet{
+            shops = []
+            total = 0
+        }
+    }
+    
+    // パラメータ無しのinitializer
+    public init(){}
+    
+    // 検索条件をパラメータとして持つinitializer
+    public init(condition: QueryCondition){self.condition = condition}
 
+    // APIからデータを読み込む
+    // reset = trueならデータを捨てて最初から読み込む
+    public func loadData(reset: Bool = false){
+        // reset = trueなら今までの結果を捨てる
+        if reset{
+            shops = []
+            total = 0
+        }
+
+        // 条件dictionaryを取得
+        var params = condition.queryParams
+        //　検索条件以外のAPIパラメータを設定
+        params["appid"] = apiId
+        params["output"] = "json"
+        params["start"] = String(shops.count + 1)
+        params["results"] = String(perPage)
+
+        
+        // APIリクエストを実行(https://github.com/SwiftyJSON/Alamofire-SwiftyJSONを参照)
+        Alamofire.request(.GET, apiURL, parameters: params).responseSwiftyJSON({
+            // リクエストが完了した時に実行されるクロージャ
+            (request, response, json, error) -> Void in
+        
+            // エラーがあれば終了
+            if error != nil{
+                println("\(error)")
+                return
+            }
+            // 店舗データをself.shopsに追加する
+            for(key,item) in json["Feature"]{
+                var shop = Shop() // 構造体Shopをインスタンス化して変数shopに代入
+                
+                // 店舗ID
+                shop.gid = item["Gid"].string
+                // 店舗名
+                var name = item["Name"].string
+                // 'が&#39という形でエンコードされているのでデコードする
+                shop.name = name?.stringByReplacingOccurrencesOfString("&#39",withString:"'",options: .LiteralSearch,range:nil)
+                // Yomi
+                shop.yomi = item["Property"]["Yomi"].string
+                // tel
+                shop.tel = item["Property"]["Tel1"].string
+                // address
+                shop.address = item["Property"]["Address"].string
+                // 緯度と経度
+                if let geometry = item["Geometry"]["Coordinates"].string{
+                    let components = geometry.componentsSeparatedByString(",")
+                    // 緯度
+                    shop.latitude = (components[1] as NSString).doubleValue
+                    // 経度
+                    shop.longitude = (components[0] as NSString).doubleValue
+                }
+                // tagline
+                shop.tagline = item["Property"]["CatchCopy"].string
+                // 店舗写真
+                shop.photoUrl =  item["Property"]["LeadImage"].string
+                // クーポン有無
+                if item["Property"]["CouponFlag"].string == "true"{
+                    shop.hasCoupon = true
+                }
+                // Station
+                if let stations = item["Property"]["Station"].array{
+                    // 路線名
+                    var line = ""
+                    if let lineString = stations[0]["Railway"].string{
+                        // componentsSeparatedByStringは文字列を指定した区切り文字列で分割するメソッド
+                        let lines = lineString.componentsSeparatedByString("/")
+                        line = lines[0]
+                    }
+                    // 駅名
+                    if let station = stations[0]["Name"].string{
+                        // 駅名と路線名があればここで両方入れる
+                        shop.station = "\(line) \(station)"
+                    } else{
+                        // 駅名がなければ路線名のみ入れる
+                        shop.station = "\(line)"
+                    }
+                }
+                
+                println(shop)
+                self.shops.append(shop)
+            }
+            // 総件数を反映
+            if let total = json["ResultInfo"]["Total"].int {
+                self.total = total
+            }else{
+                self.total = 0
+            }
+        })
+    }
+}
 
 
 
