@@ -24,8 +24,8 @@ public struct Shop : Printable {
     public var yomi: String? = nil
     public var tel: String? = nil
     public var address: String? = nil
-    public var lat: Double? = nil
-    public var lon: Double? = nil
+    public var latitude: Double? = nil
+    public var longitude: Double? = nil
     public var tagline: String? = nil
     public var hasCoupon = false
     public var location: String? = nil
@@ -40,7 +40,7 @@ public struct Shop : Printable {
             string += "Yomi: \(yomi)\n"
             string += "Tel: \(tel)\n"
             string += "Address: \(address)\n"
-            string += "Lat & Lon \(lat), \(lon))\n"
+            string += "Lat & Lon \(latitude), \(longitude))\n"
             string += "tagline: \(tagline)\n"
             string += "hasCoupon:\(hasCoupon)\n"
             string += "Location: \(location)\n"
@@ -118,15 +118,6 @@ public struct QueryCondition{
         }
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 
