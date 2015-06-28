@@ -1,5 +1,5 @@
 //
-//  YelpLocal.swift
+//  yahooLocal.swift
 //  GourmetSearchApp
 //
 //  Created by nixnoughtnothing on 6/24/15.
@@ -16,7 +16,7 @@ import Alamofire_SwiftyJSON
    構造体Shop型のプロパティは基本的にすべてOptional型にする。こうすることでコード量を減らすことができる。
    Printableプロトコルついて => http://nekogata.hatenablog.com/entry/2014/12/19/060122
 */
-
+// MARK: - APIから取得した店舗情報を格納するプロパティ一覧 -
 public struct Shop : Printable {
     public var gid: String? = nil
     public var name: String? = nil
@@ -28,7 +28,7 @@ public struct Shop : Printable {
     public var longitude: Double? = nil
     public var tagline: String? = nil
     public var hasCoupon = false
-    public var location: String? = nil
+    public var station: String? = nil
 
 
     public var description: String{
@@ -40,16 +40,18 @@ public struct Shop : Printable {
             string += "Yomi: \(yomi)\n"
             string += "Tel: \(tel)\n"
             string += "Address: \(address)\n"
-            string += "Lat & Lon \(latitude), \(longitude))\n"
+            string += "Latitude & Longiture \(latitude), \(longitude))\n"
             string += "tagline: \(tagline)\n"
             string += "hasCoupon:\(hasCoupon)\n"
-            string += "Location: \(location)\n"
+            string += "station: \(station)\n"
             return string
         }
     }
 }
 
-// added struct "Shop" in YelpLocal.swift
+
+
+// MARK: - 検索条件 -
 public struct QueryCondition{
     // キーワード
     public var query: String? = nil
@@ -57,11 +59,10 @@ public struct QueryCondition{
     public var gid: String? = nil
     // ソート順(列挙型で定義）
     public enum Sort: String{
-        case BestMatched = "bestMatched"
-        case Distance = "distance"
-        case HighestRated = "highestRated"
+        case Score = "score"
+        case Geo = "geo"
     }
-    public var sort: Sort = .BestMatched
+    public var sort: Sort = .Score
     // 緯度
     public var latitude: Double? = nil
     // 経度
@@ -84,14 +85,11 @@ public struct QueryCondition{
             }
             // sort order
             switch sort{
-            case    .BestMatched:
-                params["sort"] = "Score"
-            case    .Distance:
-                params["sort"] = "Geo"
-            case    .HighestRated:
-                params["sort"] = "highestRated"
+            case    .Score:
+                params["sort"] = "score"
+            case    .Geo:
+                params["sort"] = "geo"
             }
-            
             // 緯度
             if let unwrapped = latitude{
                 params["latitude"] = "\(unwrapped)"
@@ -106,18 +104,25 @@ public struct QueryCondition{
             }
             // デバイス:mobile固定
             params["device"] = "mobile"
-            
             // grouping:gid固定
             params["group"] = "gid"
             // 画像があるデータのみを検索する: true固定
             params["image"] = "true"
             // 業種コード:01(グルメ)固定
-//            params["category_filter"] = "01"
+            params["gc"] = "01"
             
             return params
         }
     }
 }
+
+
+
+
+
+
+
+
 
 
 

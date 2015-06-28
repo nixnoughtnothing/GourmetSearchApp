@@ -14,7 +14,7 @@
 		5B49FC801B35002A002541EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B49FC7E1B35002A002541EE /* LaunchScreen.xib */; };
 		5B49FC8C1B35002A002541EE /* GourmetSearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC8B1B35002A002541EE /* GourmetSearchAppTests.swift */; };
 		5B49FC961B352E94002541EE /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */; };
-		5B52C25F1B39BC5400C6712C /* YelpLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B52C25E1B39BC5400C6712C /* YelpLocal.swift */; };
+		5B52C25F1B39BC5400C6712C /* YahooLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B52C25E1B39BC5400C6712C /* YahooLocal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		5B49FC8A1B35002A002541EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B49FC8B1B35002A002541EE /* GourmetSearchAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetSearchAppTests.swift; sourceTree = "<group>"; };
 		5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopListItemTableViewCell.swift; path = ShopList/ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
-		5B52C25E1B39BC5400C6712C /* YelpLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpLocal.swift; sourceTree = "<group>"; };
+		5B52C25E1B39BC5400C6712C /* YahooLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +153,7 @@
 		5B52C25D1B39A2D000C6712C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				5B52C25E1B39BC5400C6712C /* YelpLocal.swift */,
+				5B52C25E1B39BC5400C6712C /* YahooLocal.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 				5B49FC961B352E94002541EE /* ShopListItemTableViewCell.swift in Sources */,
 				5B49FC781B35002A002541EE /* ShopListViewController.swift in Sources */,
 				5B49FC761B35002A002541EE /* AppDelegate.swift in Sources */,
-				5B52C25F1B39BC5400C6712C /* YelpLocal.swift in Sources */,
+				5B52C25F1B39BC5400C6712C /* YahooLocal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
