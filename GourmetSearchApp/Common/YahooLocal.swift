@@ -120,6 +120,13 @@ public struct QueryCondition{
 
 // MARK: - APIにアクセスするためのクラス -
 public class YahooLocalSearch{
+    // 読み込み開始Nofitication
+    public let YLSLoadStartNotification = "YLSLoadStartNotification"
+    // 読み込み完了Notification
+    public let YLSCompleteNotification = "YLSLoadCompleteNotification"
+    
+    
+    
     // yahooサーチAPIのアプリケーションID
     let apiId = "dj0zaiZpPUNHWm54MXNqa2FXMiZzPWNvbnN1bWVyc2VjcmV0Jng9NzE-"
     // APIのベースURL
@@ -147,6 +154,10 @@ public class YahooLocalSearch{
     // 検索条件をパラメータとして持つinitializer
     public init(condition: QueryCondition){self.condition = condition}
 
+    
+    // APIリクエスト実行開始を通知する
+//    NSNotificationCenter.defaultCenter().postNotificationName("YLSLoadStartNotification",object:nil)
+    
     // APIからデータを読み込む
     // reset = trueならデータを捨てて最初から読み込む
     public func loadData(reset: Bool = false){
@@ -163,6 +174,10 @@ public class YahooLocalSearch{
         params["output"] = "json"
         params["start"] = String(shops.count + 1)
         params["results"] = String(perPage)
+        
+        
+        // API実行開始をオブザーバーに通知する
+        NSNotificationCenter.defaultCenter().postNotificationName(YLSLoadStartNotification, object: nil)
 
         
         // APIリクエストを実行(https://github.com/SwiftyJSON/Alamofire-SwiftyJSONを参照)
@@ -172,9 +187,18 @@ public class YahooLocalSearch{
         
             // エラーがあれば終了
             if error != nil{
-                println("\(error)")
+                // API実行終了を通知する
+                var message = "Unknown error."
+                if let description = error?.description{
+                    message = description
+                }
+                NSNotificationCenter.defaultCenter().postNotificationName(
+                    self.YLSCompleteNotification,
+                    object: nil,
+                    userInfo: ["error":message]) // エラーメッセージも含めてオブザーバーへ渡す
                 return
             }
+            
             // 店舗データをself.shopsに追加する
             for(key,item) in json["Feature"]{
                 var shop = Shop() // 構造体Shopをインスタンス化して変数shopに代入
@@ -236,6 +260,9 @@ public class YahooLocalSearch{
                 self.total = 0
             }
             println(self.total)
+            
+            // API終了を通知する
+            NSNotificationCenter.defaultCenter().postNotificationName(self.YLSCompleteNotification, object: nil)
         })
     }
 }
