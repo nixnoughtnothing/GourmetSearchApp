@@ -106,6 +106,14 @@ class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 let cell = tableView.dequeueReusableCellWithIdentifier("ShopListItem") as! ShopListItemTableViewCell
                 cell.shop = yahooSearch.shops[indexPath.row]
                 
+                
+                // まだ残りがあって、現在の列の下の店舗が3つ以下になったら追加取得
+                if yahooSearch.shops.count < yahooSearch.total{
+                    if yahooSearch.shops.count - indexPath.row <= 4{
+                        yahooSearch.loadData()
+                    }
+                }
+                
                 return cell
             }
         }
