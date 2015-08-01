@@ -53,6 +53,7 @@
 		5B49FC8B1B35002A002541EE /* GourmetSearchAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetSearchAppTests.swift; sourceTree = "<group>"; };
 		5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopListItemTableViewCell.swift; path = ShopList/ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
 		5B52C25E1B39BC5400C6712C /* YahooLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocal.swift; sourceTree = "<group>"; };
+		5BA129021B42776600F6AD2B /* GourmetSearchApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GourmetSearchApp-Bridging-Header.h"; path = "GourmetSearchApp/GourmetSearchApp-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +109,7 @@
 				5B52C25D1B39A2D000C6712C /* Common */,
 				5B49FC971B352F08002541EE /* ShopList */,
 				5B49FC751B35002A002541EE /* AppDelegate.swift */,
+				5BA129021B42776600F6AD2B /* GourmetSearchApp-Bridging-Header.h */,
 				5B49FC791B35002A002541EE /* Main.storyboard */,
 				5B49FC7C1B35002A002541EE /* Images.xcassets */,
 				5B49FC7E1B35002A002541EE /* LaunchScreen.xib */,
@@ -468,6 +470,7 @@
 				INFOPLIST_FILE = GourmetSearchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/GourmetSearchApp-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -486,6 +489,7 @@
 				INFOPLIST_FILE = GourmetSearchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/GourmetSearchApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
