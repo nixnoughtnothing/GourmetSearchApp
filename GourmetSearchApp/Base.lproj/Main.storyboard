@@ -92,9 +92,6 @@
                                         <connections>
                                             <outlet property="coupon" destination="Zu7-DN-cyf" id="lYA-kw-SGs"/>
                                             <outlet property="iconContainer" destination="Eyc-j6-Olm" id="PXL-cv-qpf"/>
-                                            <outlet property="location" destination="zPo-ul-boY" id="X8b-t7-DmG"/>
-                                            <outlet property="locationWidth" destination="OT7-zE-2Mm" id="SgJ-t7-Tjx"/>
-                                            <outlet property="locationX" destination="Yju-5K-drF" id="sqS-93-mbe"/>
                                             <outlet property="name" destination="Sxf-aN-2J8" id="FKs-7J-8fR"/>
                                             <outlet property="nameHeight" destination="hyX-cj-Rau" id="Dwb-70-hEP"/>
                                             <outlet property="photo" destination="bK3-rw-HKJ" id="081-gj-hGj"/>
