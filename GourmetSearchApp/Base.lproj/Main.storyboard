@@ -131,6 +131,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="Freeword" selectionStyle="default" indentationWidth="10" reuseIdentifier="Freeword" id="BfH-kv-o2N" customClass="FreewordTableViewCell" customModule="GourmetSearchApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -172,6 +173,8 @@
                         <connections>
                             <outlet property="dataSource" destination="FTA-J0-zb0" id="Gog-dl-oPo"/>
                             <outlet property="delegate" destination="FTA-J0-zb0" id="eIP-NY-sQV"/>
+                            <outletCollection property="gestureRecognizers" destination="6uk-tX-NJb" appends="YES" id="gHv-QM-vMt"/>
+                            <outletCollection property="gestureRecognizers" destination="6uk-tX-NJb" appends="YES" id="fcD-Wq-MDx"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search Resraurants" id="E5C-1C-lkj" userLabel="Search Restaurants"/>
@@ -180,6 +183,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wjh-1V-gPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6uk-tX-NJb">
+                    <connections>
+                        <action selector="onTap:" destination="FTA-J0-zb0" id="Rp9-P9-bI1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1126" y="999"/>
         </scene>

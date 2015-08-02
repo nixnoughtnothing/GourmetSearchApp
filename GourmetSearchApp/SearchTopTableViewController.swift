@@ -110,8 +110,11 @@ class SearchTopTableViewController: UITableViewController,UITextFieldDelegate {
     }
     */
 
-    /*
-    // MARK: - Navigation
+    
+    @IBAction func onTap(sender: UITapGestureRecognizer) {
+        // TextFieldの編集状態を終了し、キーボードを隠すメソッド
+        freeword?.resignFirstResponder()
+    }
 
     // MARK: - Navigation
     
