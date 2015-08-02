@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchTopTableViewController: UITableViewController {
+class SearchTopTableViewController: UITableViewController,UITextFieldDelegate {
     var freeword: UITextField? = nil
 
     override func viewDidLoad() {
@@ -53,11 +53,26 @@ class SearchTopTableViewController: UITableViewController {
             
             // UITextFieldへの参照を保存しておく
             freeword = cell.freeword
+            // UITextFieldDelegateを自身に設定
+            cell.freeword.delegate = self
+            // タップを無視
+            cell.selectionStyle = .None // Textfieldがタップを受けるので、cell自体のtapは無視させる
             
             return cell
         }
         
         return UITableViewCell()
+    }
+    
+    // MARK: - UITextFieldDelegate
+    
+    // UITextFieldDelegateによってUITextFieldで検索キーがタップされたときに実行されるメソッド
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // キーボードを消すメソッド
+        textField.resignFirstResponder()
+        // 名前を指定してsegueを実行するメソッド (画面遷移する）
+        performSegueWithIdentifier("PushShopList", sender: self)
+        return true
     }
     
     /*
@@ -98,11 +113,13 @@ class SearchTopTableViewController: UITableViewController {
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: - Navigation
+    
+    // segueによる画面遷移のときに次の画面にparametaを渡したいときに使うメソッド
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "PushShopList" {
+            let vc = segue.destinationViewController as! ShopListViewController // 遷移先のコントローラを取得
+            vc.yahooSearch.condition.query = freeword?.text // queryプロパティに検索条件を設定している
+        }
     }
-    */
-
 }
