@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hr9-pR-zCZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -121,6 +121,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="898" y="295"/>
+        </scene>
+        <!--Search Top Table View Controller-->
+        <scene sceneID="88b-LO-917">
+            <objects>
+                <tableViewController id="FTA-J0-zb0" userLabel="Search Top Table View Controller" customClass="SearchTopTableViewController" customModule="GourmetSearchApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LOx-5C-NB7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Freeword" selectionStyle="default" indentationWidth="10" reuseIdentifier="Freeword" id="BfH-kv-o2N" customClass="FreewordTableViewCell" customModule="GourmetSearchApp" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BfH-kv-o2N" id="5mA-bw-898">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="フリーワード検索" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5z-wn-beP">
+                                            <rect key="frame" x="16" y="11" width="140" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="140" id="T8x-sE-Bst"/>
+                                                <constraint firstAttribute="height" constant="21" id="spS-yH-w96"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VKH-IG-q52">
+                                            <rect key="frame" x="172" y="7" width="412" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="uXH-lZ-kRT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="VKH-IG-q52" firstAttribute="leading" secondItem="g5z-wn-beP" secondAttribute="trailing" constant="16" id="Y2c-Y4-hnm"/>
+                                        <constraint firstItem="g5z-wn-beP" firstAttribute="leading" secondItem="5mA-bw-898" secondAttribute="leading" constant="16" id="cI1-ad-efx"/>
+                                        <constraint firstAttribute="trailing" secondItem="VKH-IG-q52" secondAttribute="trailing" constant="16" id="pUa-Dk-Vis"/>
+                                        <constraint firstAttribute="centerY" secondItem="g5z-wn-beP" secondAttribute="centerY" id="qyD-Z7-yc0"/>
+                                        <constraint firstAttribute="centerY" secondItem="VKH-IG-q52" secondAttribute="centerY" id="x54-5w-1Ny"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="freeword" destination="VKH-IG-q52" id="rE5-di-aFq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FTA-J0-zb0" id="Gog-dl-oPo"/>
+                            <outlet property="delegate" destination="FTA-J0-zb0" id="eIP-NY-sQV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search Resraurants" id="E5C-1C-lkj" userLabel="Search Restaurants"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="PushShopList" id="x2n-uo-v1e"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wjh-1V-gPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1126" y="999"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DU4-Mc-W1T">
+            <objects>
+                <navigationController id="hr9-pR-zCZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zq2-KH-DOr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FTA-J0-zb0" kind="relationship" relationship="rootViewController" id="cy5-im-ZNj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82X-6d-hWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="998"/>
         </scene>
     </scenes>
 </document>
