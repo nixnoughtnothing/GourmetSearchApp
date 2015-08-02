@@ -13,6 +13,11 @@ class SearchTopTableViewController: UITableViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // navigation barのbarボタンをカスタマイズ
+        var barButton = UIBarButtonItem()
+        barButton.title = ""
+        self.navigationItem.backBarButtonItem = barButton
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,8 +28,9 @@ class SearchTopTableViewController: UITableViewController,UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    
     
     // MARK: - UITableViewDelegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
