@@ -20,6 +20,7 @@ class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     // 下記はそのためのプロパティ
     var yahooSearch:YahooLocalSearch = YahooLocalSearch()
     var loadDataObserver: NSObjectProtocol?
+    var refreshObserver: NSObjectProtocol?
     
     
     override func viewWillAppear(animated: Bool) {
@@ -75,11 +76,45 @@ class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Pull to Refreshコントロール初期化
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh:", forControlEvents: .ValueChanged)
+        self.tableView.addSubview(refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // MARK: - Application Logic
+    
+    // Pull to Refresh
+    func onRefresh(refreshControl: UIRefreshControl){
+        // UIRefreshControlを読み込み状態にする
+        refreshControl.beginRefreshing()
+        // 終了通知を受信したらUIRefreshControlを停止する
+        refreshObserver = NSNotificationCenter.defaultCenter().addObserverForName(
+            yahooSearch.YLSCompleteNotification,
+            object: nil,
+            queue: nil,
+            usingBlock:{
+                notification in
+                
+                // 通知の待ち受けを終了
+                NSNotificationCenter.defaultCenter().removeObserver(self.refreshObserver!)
+                // UIRefreshControlを停止する
+                refreshControl.endRefreshing()
+            }
+        )
+        // 再取得
+        yahooSearch.loadData(reset: true) // 現在のデータを捨てて、再取得するので、trueにする
+    }
+    
+    
+    
+    
+    
     
     // MARK: - UITableViewDelegate -
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
