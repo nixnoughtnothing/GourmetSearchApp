@@ -26,9 +26,10 @@ class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        var qc = QueryCondition()
-        qc.query = "ハンバーガー"
-        yahooSearch = YahooLocalSearch(condition: qc)
+//        var qc = QueryCondition()
+//        qc.query = "ハンバーガー"
+//        yahooSearch = YahooLocalSearch(condition: qc)
+
         
         //読み込み完了通知を受信したときの処理
         loadDataObserver = NSNotificationCenter.defaultCenter().addObserverForName(
