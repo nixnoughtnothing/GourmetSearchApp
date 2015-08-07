@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B3A1F091B6DC0AF006CB6AD /* SearchTopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A1F081B6DC0AF006CB6AD /* SearchTopTableViewController.swift */; };
 		5B3A1F0B1B6DC33C006CB6AD /* FreewordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A1F0A1B6DC33C006CB6AD /* FreewordTableViewCell.swift */; };
+		5B3A1F0D1B73B2BE006CB6AD /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A1F0C1B73B2BE006CB6AD /* ShopDetailViewController.swift */; };
 		5B49FC761B35002A002541EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC751B35002A002541EE /* AppDelegate.swift */; };
 		5B49FC781B35002A002541EE /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC771B35002A002541EE /* ShopListViewController.swift */; };
 		5B49FC7B1B35002A002541EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B49FC791B35002A002541EE /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		5B29D4881B3EF88E008A428B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods-GourmetSearchApp/Alamofire.framework"; sourceTree = "<group>"; };
 		5B3A1F081B6DC0AF006CB6AD /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
 		5B3A1F0A1B6DC33C006CB6AD /* FreewordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreewordTableViewCell.swift; sourceTree = "<group>"; };
+		5B3A1F0C1B73B2BE006CB6AD /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopDetailViewController.swift; path = ShopList/ShopDetailViewController.swift; sourceTree = "<group>"; };
 		5B49FC701B35002A002541EE /* GourmetSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B49FC741B35002A002541EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B49FC751B35002A002541EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				5B49FC771B35002A002541EE /* ShopListViewController.swift */,
 				5B3A1F081B6DC0AF006CB6AD /* SearchTopTableViewController.swift */,
 				5B3A1F0A1B6DC33C006CB6AD /* FreewordTableViewCell.swift */,
+				5B3A1F0C1B73B2BE006CB6AD /* ShopDetailViewController.swift */,
 			);
 			name = ShopList;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				5B49FC781B35002A002541EE /* ShopListViewController.swift in Sources */,
 				5B49FC761B35002A002541EE /* AppDelegate.swift in Sources */,
 				5B3A1F0B1B6DC33C006CB6AD /* FreewordTableViewCell.swift in Sources */,
+				5B3A1F0D1B73B2BE006CB6AD /* ShopDetailViewController.swift in Sources */,
 				5B52C25F1B39BC5400C6712C /* YahooLocal.swift in Sources */,
 				5B3A1F091B6DC0AF006CB6AD /* SearchTopTableViewController.swift in Sources */,
 			);
