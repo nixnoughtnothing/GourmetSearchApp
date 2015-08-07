@@ -7,9 +7,22 @@
 //
 
 import UIKit
+import MapKit
 
 class ShopDetailViewController: UIViewController {
 
+    // MARK: - IBOutlet -
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var nameHeight: NSLayoutConstraint!
+    @IBOutlet weak var tel: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var addressContainerHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var favoriteIcon: UIImageView!
+    @IBOutlet weak var favoriteLabel: UILabel!
     
 
     
@@ -22,6 +35,7 @@ class ShopDetailViewController: UIViewController {
     }
     
     
+    }
     
     
     
