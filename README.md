@@ -1,4 +1,4 @@
 # GourmetSearchApp
-Using Yelp API
+Using YahooLocalSearch API
 
 PRs => https://github.com/nixnoughtnothing/GourmetSearchApp/pulls
