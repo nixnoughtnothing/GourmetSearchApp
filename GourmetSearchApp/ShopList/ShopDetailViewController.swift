@@ -35,6 +35,16 @@ class ShopDetailViewController: UIViewController {
     }
     
     
+    // MARK: - IBAction
+    @IBAction func telTapped(sender: UIButton) {
+        println("telTapped")
+    }
+
+    @IBAction func addressTapped(sender: UIButton) {
+        println("addressTapped")
+    }
+    @IBAction func favoriteTapped(sender: UIButton) {
+        println("favoriteTapped")
     }
     
     
