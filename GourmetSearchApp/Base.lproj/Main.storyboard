@@ -282,7 +282,7 @@
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="addressTapped:" destination="CHg-Sl-wQQ" eventType="touchUpInside" id="mhz-cB-ggp"/>
+                                                            <action selector="addressTapped:" destination="CHg-Sl-wQQ" eventType="touchUpInside" id="1kB-Sy-n6l"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHg-MC-9y5">
@@ -413,7 +413,6 @@
                     <connections>
                         <outlet property="address" destination="h0H-hs-gGT" id="NhJ-Rh-mEg"/>
                         <outlet property="addressContainerHeight" destination="K3M-NH-cE1" id="iUt-jV-RYc"/>
-                        <outlet property="addressTapped" destination="hjs-ql-1cS" id="PV8-Ct-Onb"/>
                         <outlet property="favoriteIcon" destination="11L-v7-5Vu" id="1OA-VR-XhX"/>
                         <outlet property="favoriteLabel" destination="b2b-dE-IMf" id="Pf0-Hs-Sag"/>
                         <outlet property="map" destination="VLL-xr-hnI" id="kwx-UD-eK7"/>
