@@ -114,6 +114,15 @@ class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     
+    // セルがタップされた後に実行されるメソッド
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // セルの選択状態を解除する
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        println("test")
+        // segueを実行する(ここで画面遷移する)
+        performSegueWithIdentifier("PushShopDetail", sender: indexPath)
+    }
     
     
     
@@ -157,6 +166,21 @@ class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return UITableViewCell()
     }
     
-
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // 実行しようとしているSegueがPushShopDetailであるかどうかを確認
+        if segue.identifier == "PushShopDetail"{
+            
+            let destinationVc =  segue.destinationViewController as! ShopDetailViewController
+            
+            // NSIndexPathのインスタンスからタップされた店舗を特定して、
+            if let indexPath = sender as? NSIndexPath{
+                // 遷移先のVCのshopプロパティに格納
+                destinationVc.shop = yahooSearch.shops[indexPath.row]
+            }
+        }
+            
+    }
 }
 
