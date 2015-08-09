@@ -76,6 +76,18 @@ class ShopDetailViewController: UIViewController,UIScrollViewDelegate {
         view.layoutIfNeeded()
     }
     
+    // MARK: - UIScrollViewDelegate
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        // 初期位置からどれだけ移動したかを計算(scrollView.contentOffset.yの初期値は-64、なので、scrollView.contentInset.top(navigationbarとstatusbar,64px)を足して0に戻す
+        let scrollOffset = scrollView.contentOffset.y + scrollView.contentInset.top
+        
+        // もし初期状態よりも下にスクロールされた場合(scrollOffsetは マイナスの値になる)
+        if scrollOffset <= 0{
+            photo.frame.origin.y      = scrollOffset // 常にy座標をViewのtopに固定
+            photo.frame.size.height   = 200 - scrollOffset // scrolloffsetの分heightを伸ばす
+        }
+    }
+    
     
     // MARK: - IBAction
     @IBAction func telTapped(sender: UIButton) {
