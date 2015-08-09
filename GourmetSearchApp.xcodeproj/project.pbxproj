@@ -234,6 +234,7 @@
 		5B49FC681B35002A002541EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Sttir Inc";
 				TargetAttributes = {
