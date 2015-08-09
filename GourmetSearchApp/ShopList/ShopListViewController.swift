@@ -65,7 +65,10 @@ class ShopListViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
         )
         
-        yahooSearch.loadData(reset: true) // 初回のみresetパラメータをtrueに
+        // shopsをまだ1件も取得していない場合のみ（検索から遷移してきた場合のみデータ取得する)
+        if yahooSearch.shops.count == 0{
+            yahooSearch.loadData(reset: true) // 初回のみresetパラメータをtrueに
+        }
         
     }
     
