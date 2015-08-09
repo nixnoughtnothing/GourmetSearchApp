@@ -24,10 +24,28 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
     
-
+    var shop = Shop()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Photo
+        if let url = shop.photoUrl{
+            photo.sd_setImageWithURL(NSURL(string: url),
+                placeholderImage: UIImage(named: "loading"),
+                options:nil)
+        }else{
+            photo.image = UIImage(named: "loading")
+        }
+        
+        // Shop name
+        name.text = shop.name
+        
+        // tel
+        tel.text = shop.tel
+        
+        // Addiress
+        address.text = shop.address
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +64,6 @@ class ShopDetailViewController: UIViewController {
     @IBAction func favoriteTapped(sender: UIButton) {
         println("favoriteTapped")
     }
-    
     
     
     /*
