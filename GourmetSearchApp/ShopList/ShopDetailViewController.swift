@@ -53,6 +53,18 @@ class ShopDetailViewController: UIViewController {
     }
     
     
+    // 店舗名や住所の高さを動的に変える(viewDidLayoutSubviewsはAutoLayoutの制約に従ってビューが配置された後に実行されるメソッド)
+    override func viewDidLayoutSubviews() {
+        let nameFrame = name.sizeThatFits(CGSizeMake(name.frame.width, CGFloat.max))
+        nameHeight.constant = nameFrame.height
+        
+        let addressFrame = address.sizeThatFits(CGSizeMake(address.frame.width, CGFloat.max))
+        addressContainerHeight.constant = addressFrame.height
+        
+        view.layoutIfNeeded()
+    }
+    
+    
     // MARK: - IBAction
     @IBAction func telTapped(sender: UIButton) {
         println("telTapped")
