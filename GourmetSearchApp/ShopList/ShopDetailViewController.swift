@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ShopDetailViewController: UIViewController {
+class ShopDetailViewController: UIViewController,UIScrollViewDelegate {
 
     // MARK: - IBOutlet -
     @IBOutlet weak var scrollView: UIScrollView!
