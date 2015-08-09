@@ -47,6 +47,18 @@ class ShopDetailViewController: UIViewController,UIScrollViewDelegate {
         // Addiress
         address.text = shop.address
     }
+    
+    // ShopDetailViewControllerのviewが表示される前にcallされる
+    override func viewWillAppear(animated: Bool) {
+        self.scrollView.delegate = self
+        super.viewWillAppear(animated)
+    }
+    
+    // ShopDetailViewControllerのviewが非表示になった後にCallされる
+    override func viewDidDisappear(animated: Bool) {
+        self.scrollView.delegate = nil // delegateを解除
+        super.viewDidDisappear(animated)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
