@@ -18,6 +18,7 @@
 		5B49FC8C1B35002A002541EE /* GourmetSearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC8B1B35002A002541EE /* GourmetSearchAppTests.swift */; };
 		5B49FC961B352E94002541EE /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */; };
 		5B52C25F1B39BC5400C6712C /* YahooLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B52C25E1B39BC5400C6712C /* YahooLocal.swift */; };
+		5BEFE5191B77AAB500571E7D /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEFE5181B77AAB500571E7D /* Favorite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		5B49FC951B352E94002541EE /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopListItemTableViewCell.swift; path = ShopList/ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
 		5B52C25E1B39BC5400C6712C /* YahooLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooLocal.swift; sourceTree = "<group>"; };
 		5BA129021B42776600F6AD2B /* GourmetSearchApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GourmetSearchApp-Bridging-Header.h"; path = "GourmetSearchApp/GourmetSearchApp-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		5BEFE5181B77AAB500571E7D /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				5B52C25E1B39BC5400C6712C /* YahooLocal.swift */,
+				5BEFE5181B77AAB500571E7D /* Favorite.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B49FC961B352E94002541EE /* ShopListItemTableViewCell.swift in Sources */,
+				5BEFE5191B77AAB500571E7D /* Favorite.swift in Sources */,
 				5B49FC781B35002A002541EE /* ShopListViewController.swift in Sources */,
 				5B49FC761B35002A002541EE /* AppDelegate.swift in Sources */,
 				5B3A1F0B1B6DC33C006CB6AD /* FreewordTableViewCell.swift in Sources */,
