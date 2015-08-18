@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // アプリ起動完了時にお気に入りをUserDefaultsから読み込む
+        Favorite.load()
+        
         return true
     }
 
