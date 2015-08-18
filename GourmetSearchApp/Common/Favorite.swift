@@ -14,7 +14,7 @@ public struct Favorite {
     
     public static func load(){
         let ud = NSUserDefaults.standardUserDefaults()
-        ud.registerDefaults(["Favorites":[String]()]) // NSUserDefaultsのデフォルト値を設定
+        ud.registerDefaults(["favorites":[String]()]) // NSUserDefaultsのデフォルト値を設定
         favorites = ud.objectForKey("favorites") as! [String]
     }
     
