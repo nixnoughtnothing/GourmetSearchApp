@@ -192,6 +192,21 @@
             </objects>
             <point key="canvasLocation" x="282" y="947"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hl9-4c-XEZ">
+            <objects>
+                <tabBarController id="pXN-bk-Eo8" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Lgf-xD-yq4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ta7-YD-vsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-254" y="1786"/>
+        </scene>
         <!--Shop Detail View Controller-->
         <scene sceneID="abD-7M-HFY">
             <objects>
